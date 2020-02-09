@@ -108,7 +108,7 @@ plot(subset4)
 # & - additional restrictions on lift, confidence etc.
 
 
-#summarise Association Rules / Market Basket analysis
+#summarise Association Rules / Market Basket analysis ----
 #load libraries - arules, arulesViz
 #load dataset in Transaction Format eg Groceries
 #Find frequentitems set
