@@ -12,8 +12,11 @@ x3
 class(x3)
 class(x1)
 
-x= rnorm(100,mean = 60,5)
+x= rnorm(100,mean = 70,5)
 x
 hist(x)
+hist(x, breaks=10)
 plot(density(x))
-seq()
+
+
+seq(from=1,45,5)

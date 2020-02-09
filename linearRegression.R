@@ -20,6 +20,7 @@ cor(women$height,women$weight)
 model = lm(weight ~ height, data=women)
 
 model
+residuals(model)
 summary(model)
 #to check the model exist check F-stat and Adjusted R-Squared
 

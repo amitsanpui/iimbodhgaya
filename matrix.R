@@ -11,7 +11,7 @@ plot(density(x))
 
 #matrices ----
 
-(data= round(rnorn(24,mean= 40,sd=3)))
+(data= round(rnorm(24,mean= 40,sd=3)))
 trunc(34.6)
 floor(c(-15.6))  
 ceiling(24.1)
@@ -23,13 +23,16 @@ df
 names(df)
 ?mtcars
 df$cyl = factor(df$cyl)
+df$cyl
 str(df)
 df[,c('cyl','vs','am','gear','carb')] = lapply(df[,c('cyl','vs','am','gear','carb')],factor)
-barplot(table(df$cyl), col =1:3)
+str(df)
+barplot(table(df$cyl), col =1:2)
 
 
 
 #aggregate() ----
+
 aggregate(. ~ cyl, data = df, mean)
 aggregate(cbind(mpg,wt)~cyl+gear,data= df,mean) #mean mpg & wt for each gear and cyl type
 
@@ -37,6 +40,7 @@ aggregate(cbind(mpg,wt)~cyl+gear,data= df,mean) #mean mpg & wt for each gear and
 #factors ----
 #without order
 set.seed(1234)
+?set.seed
 (gender = sample(c('m','f'),size=100,replace=T,prob = c(.7,.3)))
 table(gender)
 prop.table(table(gender))
@@ -48,7 +52,7 @@ set.seed(1234)
 (grades = sample(c('A','B','C','D'),size = 100000,replace = T,prob = c(.4,.3,.2,.1)))
 table(grades)
 prop.table(table(grades))
-barplot(table(grades))
+barplot(table(grades), col=1:4)
 
 #grades in order specified ----
 #grades
@@ -78,6 +82,7 @@ df%>%filter(mpg>25)
 df
 
 #ggplot ----
+library(ggplot2)
 ggplot(df,aes(x=wt, y=mpg))+geom_point()
 ggplot(df,aes(x=wt, y=mpg))+geom_point(aes(color=am))
 ggplot(df,aes(x=wt, y=mpg))+geom_point(aes(color=am, size=hp, shape= carb))

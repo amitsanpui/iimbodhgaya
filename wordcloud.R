@@ -9,4 +9,5 @@ wordcloud2(df)
 head(demoFreq)
 dim(demoFreq)
 par(mar=c(0,0,0,0))
-wordcloud2(demoFreq, size=2,color = "random-light", backgroundColor = "white")
+wordcloud2(demoFreq, size=1,color = "random-light", backgroundColor = "white",shape="star")
+?wordcloud2
